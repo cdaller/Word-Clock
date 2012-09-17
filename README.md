@@ -7,5 +7,5 @@ something neat, when Vim just meant
 
 Anyway, it looks sort of cool even though the code doesn't.
 
-Screenshot: [Word Clock Screenshot](http://i.imgur.com/HszqD.png "Word Clock
+Screenshot: ![Word Clock Screenshot](http://i.imgur.com/HszqD.png "Word Clock
 Screenshot")
