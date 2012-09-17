@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Word Clock </title>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link id="mainStyle" rel="stylesheet" type="text/css" href="css/black.css" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<script src = "http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.1.js" type = "text/javascript"> </script>
+	<script src = "js/centerdiv.js" type = "text/javascript"> </script>
+	<script src = "js/cookie.js" type = "text/javascript"> </script>
+	<script src = "js/clock.js" type = "text/javascript"> </script>
+	<script type="text/javascript">
+		$(function () {
+			//$('body').fadeOut(0);
+			$(window).resize(function(){
+				customAlign('#mainclock', 'center', 'center');
+			});
+			$('#hide').load('css/clock/black.css');
+			$('#hide').load('css/clock/red.css');
+			$('#hide').load('css/clock/white.css');
+			if ($.cookie('style') == null){
+				$.cookie('style', 'black');
+			}
+			var style = $.cookie('style');
+			fancySwitchStylesheet(style);
+			updateWordClock();
+			updateWatchClock();
+			// update the words every minute, if necessary
+			setInterval("updateWordClock()", 60000); 
+			setInterval("updateWatchClock()", 500);
+		});
+	</script>
+</head>
+<body>
+<div id = "switcher">
+	<a href="#" onClick = "fancySwitchStylesheet('red'); return false;">red</a> <br />
+	<a href="#" onClick = "fancySwitchStylesheet('white'); return false;">white</a> <br />
+	<a href="#" onClick = "fancySwitchStylesheet('black'); return false;">black</a> <br />
+</div>
+<table id = "mainclock">
+	<tr>
+	<td class="highlight">I</td>
+	<td class="highlight">T</td>
+	<td>L</td>
+	<td class="highlight">I</td>
+	<td class="highlight">S</td>
+	<td>A</td>
+	<td>S</td>
+	<td>T</td>
+	<td>I</td>
+	<td>M</td>
+	<td>E</td>
+	</tr>
+	<tr>
+	<td class="a">A</td>
+	<td>C</td>
+	<td class="quarter">Q</td>
+	<td class="quarter">U</td>
+	<td class="quarter">A</td>
+	<td class="quarter">R</td>
+	<td class="quarter">T</td>
+	<td class="quarter">E</td>
+	<td class="quarter">R</td>
+	<td>D</td>
+	<td>C</td>
+	</tr>
+	<tr>
+	<td class="twenty">T</td>
+	<td class="twenty">W</td>
+	<td class="twenty">E</td>
+	<td class="twenty">N</td>
+	<td class="twenty">T</td>
+	<td class="twenty">Y</td>
+	<td class="fiveq">F</td>
+	<td class="fiveq">I</td>
+	<td class="fiveq">V</td>
+	<td class="fiveq">E</td>
+	<td>X</td>
+	</tr>
+	<tr>
+	<td class="half">H</td>
+	<td class="half">A</td>
+	<td class="half">L</td>
+	<td class="half">F</td>
+	<td>B</td>
+	<td class="tenq">T</td>
+	<td class="tenq">E</td>
+	<td class="tenq">N</td>
+	<td>F</td>
+	<td class="to">T</td>
+	<td class="to">O</td>
+	</tr>
+	<tr>
+	<td class="past">P</td>
+	<td class="past">A</td>
+	<td class="past">S</td>
+	<td class="past">T</td>
+	<td>E</td>
+	<td>R</td>
+	<td>U</td>
+	<td class="nine">N</td>
+	<td class="nine">I</td>
+	<td class="nine">N</td>
+	<td class="nine">E</td>
+	</tr>
+	<tr>
+	<td class="one">O</td>
+	<td class="one">N</td>
+	<td class="one">E</td>
+	<td class="six">S</td>
+	<td class="six">I</td>
+	<td class="six">X</td>
+	<td class="three">T</td>
+	<td class="three">H</td>
+	<td class="three">R</td>
+	<td class="three">E</td>
+	<td class="three">E</td>
+	</tr>
+	<tr>
+	<td class="four">F</td>
+	<td class="four">O</td>
+	<td class="four">U</td>
+	<td class="four">R</td>
+	<td class="five">F</td>
+	<td class="five">I</td>
+	<td class="five">V</td>
+	<td class="five">E</td>
+	<td class="two">T</td>
+	<td class="two">W</td>
+	<td class="two">O</td>
+	</tr>
+	<tr>
+	<td class="eight">E</td>
+	<td class="eight">I</td>
+	<td class="eight">G</td>
+	<td class="eight">H</td>
+	<td class="eight">T</td>
+	<td class="eleven">E</td>
+	<td class="eleven">L</td>
+	<td class="eleven">E</td>
+	<td class="eleven">V</td>
+	<td class="eleven">E</td>
+	<td class="eleven">N</td>
+	</tr>
+	<tr>
+	<td class="seven">S</td>
+	<td class="seven">E</td>
+	<td class="seven">V</td>
+	<td class="seven">E</td>
+	<td class="seven">N</td>
+	<td class="twelve">T</td>
+	<td class="twelve">W</td>
+	<td class="twelve">E</td>
+	<td class="twelve">L</td>
+	<td class="twelve">V</td>
+	<td class="twelve">E</td>
+	</tr>
+	<tr>
+<td class="ten">T</td>
+<td class="ten">E</td>
+<td class="ten">N</td>
+<td>S</td>
+<td>E</td>
+<td class="oclock">O'</td>
+<td class="oclock">C</td>
+<td class="oclock">L</td>
+<td class="oclock">O</td>
+<td class="oclock">C</td>
+<td class="oclock">K</td>
+</table>
+</div>
+<a href = "#" id = "watchToggle">
+<div id = "watch"> </div>
+</a>
+<div id = "hide"></div>
+<div id = "credits">
+Code: <a href="../index.html">Achal Dave</a>
+<br/>
+<a href="../images/clockinspiration.jpg">Concept</a>
+</div>
+<!--
+clock.js created by Achal Dave
+centerdiv.js contains code found on http://tutorialzine.com/2010/03/centering-div-vertically-and-horizontally/
+feel free to use the code (preferrably with attribution)
+-->
+</body>
+</html>

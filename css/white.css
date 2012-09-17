@@ -1,0 +1,34 @@
+/*
+Colors used:
+	Background:			#000000
+	Highlight:			#000000
+	Almost Blends In: 	#CCCCCC
+	Other: 				#7D7D7D
+	Links:				#454545
+*/
+
+body {
+	background-color:#FFFFFF;
+	color:#CCCCCC;
+}
+
+#watch {
+	color:#7D7D7D;
+}
+
+#credits {
+	color:#7D7D7D;
+}
+
+#credits a {
+	color: #454545;
+}
+
+.highlight {
+	color:#000000;
+	text-shadow: #000000 0em 0em 0.5em, #000000 0em 0em 0.5em;
+}
+
+h1 {
+	color:white;
+}
