@@ -24,10 +24,14 @@
 			$('#hide').load('css/clock/black.css');
 			$('#hide').load('css/clock/red.css');
 			$('#hide').load('css/clock/white.css');
-			if ($.cookie('style') == null){
-				$.cookie('style', 'black');
+      
+      // create table
+      addDataToTable('mainclock'); 
+      
+      var style = 'black'; // default
+			if ($.cookie('style') != null) {
+				style = $.cookie('style');
 			}
-			var style = $.cookie('style');
 			fancySwitchStylesheet(style);
 			updateWordClock();
 			updateWatchClock();
@@ -37,7 +41,7 @@
 		});
 	</script>
 </head>
-<body onLoad="addDataToTable('mainclock'); updateWordClock();">
+<body>
 <div id = "switcher">
 	<a href="#" onClick = "fancySwitchStylesheet('red'); return false;">red</a> <br />
 	<a href="#" onClick = "fancySwitchStylesheet('white'); return false;">white</a> <br />

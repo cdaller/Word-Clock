@@ -162,50 +162,50 @@ function addDataToTable(tableId) {
 	);
   addRow(tabBody,
 		new Array(
-			createColumn("three", "D"),
-			createColumn("three", "R"),
-			createColumn("three", "E"),
-			createColumn("three", "I"),
+			createColumn("threeHour", "D"),
+			createColumn("threeHour", "R"),
+			createColumn("threeHour", "E"),
+			createColumn("threeHour", "I"),
 			createColumn("", "N"),
-			createColumn("seven", "S"),
-			createColumn("seven", "I"),
-			createColumn("seven", "E"),
-			createColumn("seven", "B"),
-			createColumn("seven", "E"),
-			createColumn("seven", "N"),
+			createColumn("sevenHour", "S"),
+			createColumn("sevenHour", "I"),
+			createColumn("sevenHour", "E"),
+			createColumn("sevenHour", "B"),
+			createColumn("sevenHour", "E"),
+			createColumn("sevenHour", "N"),
 			createColumn("", "T")
 		)
 	);
   addRow(tabBody,
 		new Array(
-			createColumn("eleven", "E"),
-			createColumn("eleven", "L"),
-			createColumn("eleven five", "F"),
-			createColumn("five", "Ü"),
-			createColumn("five", "N"),
-			createColumn("five", "F"),
+			createColumn("elevenHour", "E"),
+			createColumn("elevenHour", "L"),
+			createColumn("elevenHour fiveHour", "F"),
+			createColumn("fiveHour", "Ü"),
+			createColumn("fiveHour", "N"),
+			createColumn("fiveHour", "F"),
 			createColumn("", "J"),
-			createColumn("twelve", "Z"),
-			createColumn("twelve", "W"),
-			createColumn("twelve", "Ö"),
-			createColumn("twelve", "L"),
-			createColumn("twelve", "F")
+			createColumn("twelveHour", "Z"),
+			createColumn("twelveHour", "W"),
+			createColumn("twelveHour", "Ö"),
+			createColumn("twelveHour", "L"),
+			createColumn("twelveHour", "F")
 		)
 	);
   addRow(tabBody,
 		new Array(
-			createColumn("four", "V"),
-			createColumn("four", "I"),
-			createColumn("four", "E"),
-			createColumn("four", "R"),
-			createColumn("four", "Z"),
+			createColumn("fourHour", "V"),
+			createColumn("fourHour", "I"),
+			createColumn("fourHour", "E"),
+			createColumn("fourHour", "R"),
+			createColumn("fourHour", "Z"),
 			createColumn("", "W"),
 			createColumn("", "E"),
 			createColumn("", "I"),
-			createColumn("eight", "A"),
-			createColumn("eight", "C"),
-			createColumn("eight", "H"),
-			createColumn("eight", "T")
+			createColumn("eightHour", "A"),
+			createColumn("eightHour", "C"),
+			createColumn("eightHour", "H"),
+			createColumn("eightHour", "T")
 		)
 	);
   addRow(tabBody,

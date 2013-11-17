@@ -21,11 +21,13 @@
 			$('#hide').load('css/clock/black.css');
 			$('#hide').load('css/clock/red.css');
 			$('#hide').load('css/clock/white.css');
-			if ($.cookie('style') == null){
-				$.cookie('style', 'black');
+
+      var style = 'black'; // default
+			if ($.cookie('style') != null) {
+				style = $.cookie('style');
 			}
-			var style = $.cookie('style');
 			fancySwitchStylesheet(style);
+
 			updateWordClock();
 			updateWatchClock();
 			// update the words every minute, if necessary

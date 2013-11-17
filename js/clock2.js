@@ -6,16 +6,16 @@ function updateWordClock() {
 	var minute = currDate.getMinutes();
 	var second = currDate.getSeconds();
 	var amPm = "am";
+	if (hour < 6 || hour > 20) {
+		amPm = "night";
+	} else if (hour > 12) {
+		amPm = "pm";
+	}
 	if (hour > 12) {
-		if (hour > 20) {
-			amPm = "night";
-		} else {
-			amPm = "pm";
-		}
 		hour -= 12;
 	}
-	var numToHour = ['one','two','three','four','five','six',
-	'seven','eight','nine','ten','eleven','twelve','one'];
+	var numToHour = ['oneHour','twoHour','threeHour','fourHour','fiveHour','sixHour',
+	'sevenHour','eightHour','nineHour','tenHour','elevenHour','twelveHour','oneHour'];
 	if (hour == 0) {
 		var hr_index = 11;
 	}	else {
