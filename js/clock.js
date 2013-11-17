@@ -29,7 +29,7 @@ function updateWordClock() {
 	}
 	else if (min_index == 12) {
 		to_highlight.push(numToHour[hr_index+1]);
-		to_hi0hlight.push('oclock');
+		to_highlight.push('oclock');
 	}
 	else {
 		(min_index > 6) ? to_highlight.push('to', numToHour[hr_index+1]) : to_highlight.push('past', numToHour[hr_index])
@@ -52,33 +52,4 @@ function updateWordClock() {
 		i += 1;
 	}
 	$('.highlightthese').addClass('highlight'); /* this way everything highlights at once */
-}
-
-function updateWatchClock() {
-	var currDate = new Date();
-	var hour = currDate.getHours();
-	var minute = currDate.getMinutes();
-	var second = currDate.getSeconds();
-	var second = second + '';
-	var minute = minute + '';
-	if (second.length == 1) {
-		second = '0'+second;
-	}
-	if (minute.length == 1) {
-		minute = '0'+minute;
-	}
-	$('#watch').html(hour+':'+minute+':'+second);
-}
-
-function fancySwitchStylesheet(color) {
-	$.cookie('style',color);
-	$('body').fadeOut(100);
-	switchStylesheet(color);
-	$('body').fadeIn(100);
-	setTimeout(function(){$(window).resize();},50);
-}
-
-function switchStylesheet(color) {
-	$('#mainStyle').attr("href", 'css/'+color + ".css");
-	$(window).resize();
 }

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Word Clock </title>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link id="mainStyle" rel="stylesheet" type="text/css" href="css/black.css" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<script src = "js/jquery-1.7.1.js" type = "text/javascript"> </script>
+	<script src = "js/centerdiv.js" type = "text/javascript"> </script>
+	<script src = "js/cookie.js" type = "text/javascript"> </script>
+  <script src = "js/common.js" type = "text/javascript"> </script>
+  <script src = "js/table.js" type = "text/javascript"> </script>
+	<script src = "js/de.js" type = "text/javascript"> </script>
+  <script src = "js/clock2.js" type = "text/javascript"> </script>
+
+    <script type="text/javascript">
+		$(function () {
+			//$('body').fadeOut(0);
+			$(window).resize(function(){
+				customAlign('#mainclock', 'center', 'center');
+			});
+			$('#hide').load('css/clock/black.css');
+			$('#hide').load('css/clock/red.css');
+			$('#hide').load('css/clock/white.css');
+			if ($.cookie('style') == null){
+				$.cookie('style', 'black');
+			}
+			var style = $.cookie('style');
+			fancySwitchStylesheet(style);
+			updateWordClock();
+			updateWatchClock();
+			// update the words every minute, if necessary
+			setInterval("updateWordClock()", 60000); 
+			setInterval("updateWatchClock()", 500);
+		});
+	</script>
+</head>
+<body onLoad="addDataToTable('mainclock'); updateWordClock();">
+<div id = "switcher">
+	<a href="#" onClick = "fancySwitchStylesheet('red'); return false;">red</a> <br />
+	<a href="#" onClick = "fancySwitchStylesheet('white'); return false;">white</a> <br />
+	<a href="#" onClick = "fancySwitchStylesheet('black'); return false;">black</a> <br />
+</div>
+
+<div>
+<table id = "mainclock">
+</table>
+</div>
+
+<a href = "#" id = "watchToggle">
+<div id = "watch"> </div>
+</a>
+<div id = "hide"></div>
+<div id = "credits">
+Code: <a href="../index.html">Achal Dave</a>
+<br/>
+<a href="../images/clockinspiration.jpg">Concept</a>
+</div>
+<!--
+clock.js created by Achal Dave
+centerdiv.js contains code found on http://tutorialzine.com/2010/03/centering-div-vertically-and-horizontally/
+feel free to use the code (preferrably with attribution)
+-->
+</body>
+</html>
