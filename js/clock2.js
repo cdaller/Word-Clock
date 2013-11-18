@@ -8,9 +8,9 @@ function updateWordClock() {
 	var amPm = "am";
 	if (hour < 6 || hour > 20) {
 		amPm = "night";
-	} else if (hour > 12) {
+	} else if (hour >= 12) {
 		amPm = "pm";
-	}
+	} 
 	if (hour > 12) {
 		hour -= 12;
 	}
