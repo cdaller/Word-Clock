@@ -168,7 +168,7 @@ function addDataToTable(tableId) {
 			createColumn("threeHour oneHour", "E"),
 			createColumn("threeHour oneHour", "I"),
 			createColumn("oneHour", "N"),
-			createColumn("sevenHour oneHour", "S"),
+			createColumn("sevenHour", "S"),
 			createColumn("sevenHour", "I"),
 			createColumn("sevenHour", "E"),
 			createColumn("sevenHour", "B"),
