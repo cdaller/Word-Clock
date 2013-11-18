@@ -80,6 +80,8 @@ minutes[57] = "es war gerade fuenf vor hourPlusOne";
 minutes[58] = "es ist gleich hourPlusOne";
 minutes[59] = "es ist gleich hourPlusOne";
 
+hours = new Array();
+
 addDataToTableDeLarge('mainclock');
 updateWordClock();
 }

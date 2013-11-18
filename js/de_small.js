@@ -17,22 +17,24 @@ function addSwitcherDeSmall() {
 /* minutes definitions */
 function initDeSmall() {
 	minutes = new Array();
-minutes[00] = "es ist hour";
-minutes[05] = "es ist fuenf nach hour";
-minutes[10] = "es ist zehn nach hour";
-minutes[15] = "es ist viertel nach hour";
-//minutes[15] = "es ist viertel hourPlusOne";
-minutes[20] = "es ist zwanzig nach hour";
-minutes[25] = "es ist fuenf vor halb hourPlusOne";
-minutes[30] = "es ist halb hourPlusOne";
-minutes[35] = "es ist fuenf nach halb hourPlusOne";
-minutes[40] = "es ist zehn nach halb hourPlusOne";
-minutes[45] = "es ist drei viertel hourPlusOne";
-minutes[50] = "es ist zehn vor hourPlusOne";
-minutes[55] = "es ist fuenf vor hourPlusOne";
+	minutes[00] = "es ist hour";
+	minutes[05] = "es ist fuenf nach hour";
+	minutes[10] = "es ist zehn nach hour";
+	minutes[15] = "es ist viertel nach hour";
+	//minutes[15] = "es ist viertel hourPlusOne";
+	minutes[20] = "es ist zwanzig nach hour";
+	minutes[25] = "es ist fuenf vor halb hourPlusOne";
+	minutes[30] = "es ist halb hourPlusOne";
+	minutes[35] = "es ist fuenf nach halb hourPlusOne";
+	minutes[40] = "es ist zehn nach halb hourPlusOne";
+	minutes[45] = "es ist drei viertel hourPlusOne";
+	minutes[50] = "es ist zehn vor hourPlusOne";
+	minutes[55] = "es ist fuenf vor hourPlusOne";
 
-addDataToTableDeSmall('mainclock');
-updateWordClock();
+	hours = new Array();
+  
+	addDataToTableDeSmall('mainclock');
+	updateWordClock();
 }
 
 /* add table data for word clock using methods from table.js */

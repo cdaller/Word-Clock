@@ -4,6 +4,7 @@
 
 // the array that stores the css classes for every minute
 var minutes = new Array();
+var hours = new Array();
 
 /* initialize the watch and the recurring call to update it */
 function initWatch() {
@@ -36,6 +37,7 @@ function updateWordClock() {
 	$('.highlightthese').removeClass('highlightthese');
 	var currDate = new Date();
 	var hour = currDate.getHours();
+	var hour24 = hour;
 	var minute = currDate.getMinutes();
 	var second = currDate.getSeconds();
 	var amPm = "am";
@@ -64,7 +66,13 @@ function updateWordClock() {
 	classes = classes.replace("hourPlusOne", numToHour[hr_index + 1]);
 	classes = classes.replace("hour", numToHour[hr_index]);
 	var to_highlight = classes.split(" ");
-	to_highlight.push('oclock');
+	
+	if (hours[hour24] != null) {
+		to_highlight.push(hours[hour24]);
+	} else {
+		to_highlight.push('oclock');		
+	}
+	
 	to_highlight.push(amPm);
 
 	// find all elements with classes in to_highlight and add "highlight" as class:

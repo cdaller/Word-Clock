@@ -30,8 +30,10 @@ function initEnSmall() {
 	minutes[50] = "it is ten to hourPlusOne";
 	minutes[55] = "it is five to hourPlusOne";
 
-addDataToTableEnSmall('mainclock');
-updateWordClock();
+	hours = new Array();
+
+  addDataToTableEnSmall('mainclock');
+  updateWordClock();
 }
 
 function addDataToTableEnSmall(tableId) {
