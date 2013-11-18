@@ -13,10 +13,11 @@
 
   <script src = "js/common.js" type = "text/javascript"> </script>
   <script src = "js/table.js" type = "text/javascript"> </script>
+	<script src = "js/de_small.js" type = "text/javascript"> </script>
 	<script src = "js/de_large.js" type = "text/javascript"> </script>
   <script src = "js/en_orig.js" type = "text/javascript"> </script>
 
-    <script type="text/javascript">
+  <script type="text/javascript">
     // execute as soon as page is loaded:
 		$(function () {
       initWatch();
@@ -29,11 +30,12 @@
 	<a href="#" onClick = "fancySwitchStylesheet('white'); return false;">white</a> <br />
 	<a href="#" onClick = "fancySwitchStylesheet('black'); return false;">black</a> <br />
 </div>
-<div id="switcherLanguage"/>
+
+<div id="switcherLanguage">
+</div>
 
 <div>
-<table id = "mainclock">
-</table>
+  <table id = "mainclock"></table>
 </div>
 
 <a href = "#" id = "watchToggle">
