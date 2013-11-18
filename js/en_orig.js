@@ -1,18 +1,40 @@
-var minutes = new Array(60);
-minutes[00] = "it is hour";
-minutes[05] = "it is five past hour";
-minutes[10] = "it is ten past hour";
-minutes[15] = "it is a quarter past hour";
-minutes[20] = "it is twenty past hour";
-minutes[25] = "it is twentyfive past hour";
-minutes[30] = "it is half past hour";
-minutes[35] = "it is twentyfive to hourPlusOne";
-minutes[40] = "it is twenty to hourPlusOne";
-minutes[45] = "it is a quarter to hourPlusOne";
-minutes[50] = "it is ten to hourPlusOne";
-minutes[55] = "it is five to hourPlusOne";
+/* add link for this design to switch element */
+$(function () {
+  addSwitcherEnSmall();
+});
 
-function addDataToTable(tableId) {
+function addSwitcherEnSmall() {	
+  var switchElement = document.getElementById("switcherLanguage");
+  var aTag = document.createElement('a');
+  aTag.setAttribute('href', "#");
+  aTag.setAttribute('onclick', "initEnSmall(); return false;");
+  aTag.innerHTML = "English";
+	var myDiv = document.createElement('div');
+  myDiv.appendChild(aTag);
+	switchElement.appendChild(myDiv);
+}
+
+/* minutes definitions */
+function initEnSmall() {
+	minutes = new Array();
+	minutes[00] = "it is hour";
+	minutes[05] = "it is five past hour";
+	minutes[10] = "it is ten past hour";
+	minutes[15] = "it is a quarter past hour";
+	minutes[20] = "it is twenty past hour";
+	minutes[25] = "it is twentyfive past hour";
+	minutes[30] = "it is half past hour";
+	minutes[35] = "it is twentyfive to hourPlusOne";
+	minutes[40] = "it is twenty to hourPlusOne";
+	minutes[45] = "it is a quarter to hourPlusOne";
+	minutes[50] = "it is ten to hourPlusOne";
+	minutes[55] = "it is five to hourPlusOne";
+
+addDataToTableEnSmall('mainclock');
+updateWordClock();
+}
+
+function addDataToTableEnSmall(tableId) {
   tabBody = document.getElementById(tableId);
 	tabBody.innerHTML = "";
   addRow(tabBody,

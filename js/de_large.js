@@ -1,4 +1,22 @@
-var minutes = new Array(60);
+/* add link for this design to switch element */
+$(function () {
+  addSwitcherDeLarge();
+});
+
+function addSwitcherDeLarge() {	
+  var switchElement = document.getElementById("switcherLanguage");
+  var aTag = document.createElement('a');
+  aTag.setAttribute('href', "#");
+  aTag.setAttribute('onclick', "initDeLarge(); return false;");
+  aTag.innerHTML = "Deutsch Gross";
+	var myDiv = document.createElement('div');
+  myDiv.appendChild(aTag);
+	switchElement.appendChild(myDiv);
+}
+
+/* minutes definitions */
+function initDeLarge() {
+	minutes = new Array();
 minutes[00] = "es ist hour";
 minutes[01] = "es war gerade hour";
 minutes[02] = "es war gerade hour";
@@ -62,7 +80,12 @@ minutes[57] = "es war gerade fuenf vor hourPlusOne";
 minutes[58] = "es ist gleich hourPlusOne";
 minutes[59] = "es ist gleich hourPlusOne";
 
-function addDataToTable(tableId) {
+addDataToTableDeLarge('mainclock');
+updateWordClock();
+}
+
+/* add table data for word clock using methods from table.js */
+function addDataToTableDeLarge(tableId) {
   tabBody = document.getElementById(tableId);
 	tabBody.innerHTML = "";
   addRow(tabBody,

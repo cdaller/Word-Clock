@@ -1,3 +1,11 @@
+/** 
+ * Common functions for word clock
+ */
+
+// the array that stores the css classes for every minute
+var minutes = new Array();
+
+/* initialize the watch and the recurring call to update it */
 function initWatch() {
 	//$('body').fadeOut(0);
 	$(window).resize(function(){
@@ -7,8 +15,8 @@ function initWatch() {
 	$('#hide').load('css/clock/red.css');
 	$('#hide').load('css/clock/white.css');
   
-  // create table
-  addDataToTable('mainclock'); 
+  // default watch is DeLarge
+  initDeLarge();
   
   var style = 'black'; // default
 	if ($.cookie('style') != null) {
@@ -22,6 +30,53 @@ function initWatch() {
 	setInterval("updateWatchClock()", 500);
 }
 
+/* Update the word clock using css classes */
+function updateWordClock() {
+	$('.highlight').removeClass('highlight');
+	$('.highlightthese').removeClass('highlightthese');
+	var currDate = new Date();
+	var hour = currDate.getHours();
+	var minute = currDate.getMinutes();
+	var second = currDate.getSeconds();
+	var amPm = "am";
+	if (hour < 5 || hour > 19) {
+		amPm = "night";
+	} else if (hour >= 12) {
+		amPm = "pm";
+	} 
+	if (hour > 12) {
+		hour -= 12;
+	}
+	var numToHour = ['oneHour','twoHour','threeHour','fourHour','fiveHour','sixHour',
+	'sevenHour','eightHour','nineHour','tenHour','elevenHour','twelveHour','oneHour'];
+	if (hour == 0) {
+		var hr_index = 11;
+	}	else {
+		var hr_index = hour - 1;
+	}
+
+  // define the classes to highlight	
+	var classes = null;
+	// allow to have empty array values, search the next value below
+	while (classes == null ) {
+		classes = minutes[minute--];
+	}
+	classes = classes.replace("hourPlusOne", numToHour[hr_index + 1]);
+	classes = classes.replace("hour", numToHour[hr_index]);
+	var to_highlight = classes.split(" ");
+	to_highlight.push('oclock');
+	to_highlight.push(amPm);
+
+	// find all elements with classes in to_highlight and add "highlight" as class:
+	var i = 0;
+	while (i < to_highlight.length) {
+		$('.'+to_highlight[i]).addClass('highlightthese');
+		i += 1;
+	}
+	$('.highlightthese').addClass('highlight'); /* this way everything highlights at once */	
+}
+
+/* Update the small clock that shows the current time in numbers */
 function updateWatchClock() {
 	var currDate = new Date();
 	var hour = currDate.getHours();
@@ -38,6 +93,7 @@ function updateWatchClock() {
 	$('#watch').html(hour+':'+minute+':'+second);
 }
 
+/* switch style sheets */
 function fancySwitchStylesheet(color) {
 	$.cookie('style',color);
 	$('body').fadeOut(100);
@@ -51,7 +107,7 @@ function switchStylesheet(color) {
 	$(window).resize();
 }
 
-
+/* switch the layout/language of the word clock */
 function fancySwitchLanguage(language) {
 	var filename = "js/" + language + ".js";
 	var fileref=document.createElement('script')

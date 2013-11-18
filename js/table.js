@@ -1,3 +1,7 @@
+/**
+ * Javascript that handes adding table rows/cells
+ */
+
 function addRow(tableElement, rows) {
 	row = document.createElement("tr");
 	for (var index = 0; index < rows.length; index++) {
