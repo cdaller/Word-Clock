@@ -63,7 +63,8 @@ minutes[58] = "es ist gleich hourPlusOne";
 minutes[59] = "es ist gleich hourPlusOne";
 
 function addDataToTable(tableId) {
-  tabBody = document.getElementById(tableId),
+  tabBody = document.getElementById(tableId);
+	tabBody.innerHTML = "";
   addRow(tabBody,
 		new Array(
 			createColumn("es", "E"),
@@ -164,10 +165,10 @@ function addDataToTable(tableId) {
 		new Array(
 			createColumn("threeHour", "D"),
 			createColumn("threeHour", "R"),
-			createColumn("threeHour", "E"),
-			createColumn("threeHour", "I"),
-			createColumn("", "N"),
-			createColumn("sevenHour", "S"),
+			createColumn("threeHour oneHour", "E"),
+			createColumn("threeHour oneHour", "I"),
+			createColumn("oneHour", "N"),
+			createColumn("sevenHour oneHour", "S"),
 			createColumn("sevenHour", "I"),
 			createColumn("sevenHour", "E"),
 			createColumn("sevenHour", "B"),

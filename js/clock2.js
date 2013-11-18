@@ -23,7 +23,11 @@ function updateWordClock() {
 	}
 
   // define the classes to highlight	
-	var classes = minutes[minute];
+	var classes = null;
+	// allow to have empty array values, search the next value below
+	while (classes == null ) {
+		classes = minutes[minute--];
+	}
 	classes = classes.replace("hourPlusOne", numToHour[hr_index + 1]);
 	classes = classes.replace("hour", numToHour[hr_index]);
 	var to_highlight = classes.split(" ");
