@@ -12,9 +12,9 @@ function initWatch() {
 	$(window).resize(function(){
 		customAlign('#mainclock', 'center', 'center');
 	});
-	$('#hide').load('css/clock/black.css');
-	$('#hide').load('css/clock/red.css');
-	$('#hide').load('css/clock/white.css');
+	$('#hide').load('css/black.css');
+	$('#hide').load('css/red.css');
+	$('#hide').load('css/white.css');
   
   // default watch is DeLarge
   initDeLarge();
