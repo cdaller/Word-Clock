@@ -19,13 +19,13 @@ function initFrSmall() {
 	minutes = new Array();
 	minutes[00] = "il est hour";
 	minutes[05] = "il est hour oclock et1 cinqu";
-	minutes[10] = "il est hour oclock et1 dix";
+	minutes[10] = "il est hour oclock dix";
 	minutes[15] = "il est hour oclock et1 quart";
-	minutes[20] = "il est hour oclock et1 quart";
+	minutes[20] = "il est hour oclock vingt";
 	minutes[25] = "il est hour oclock vingtcinqu";
 	minutes[30] = "il est hour oclock et2 demi";
-	minutes[35] = "il est hourPlusOne moins vingtcinqu";
-	minutes[40] = "il est hourPlusOne moins vingt";
+	minutes[35] = "il est hourPlusOne oclock moins vingtcinqu";
+	minutes[40] = "il est hourPlusOne oclock moins vingt";
 	minutes[45] = "il est hourPlusOne oclock moins le quart";
 	minutes[50] = "il est hourPlusOne oclock moins dix";
 	minutes[55] = "il est hourPlusOne oclock moins cinqu";
