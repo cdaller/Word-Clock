@@ -16,6 +16,9 @@ function addSwitcherFrSmall() {
 
 /* minutes definitions */
 function initFrSmall() {
+	$("#mainclock").show();	
+	$("#maincalendar").hide();
+
 	minutes = new Array();
 	minutes[00] = "il est hour";
 	minutes[05] = "il est hour oclock et1 cinqu";

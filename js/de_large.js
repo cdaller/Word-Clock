@@ -16,6 +16,8 @@ function addSwitcherDeLarge() {
 
 /* minutes definitions */
 function initDeLarge() {
+	$("#mainclock").show();	
+	$("#maincalendar").hide();
 	minutes = new Array();
 minutes[00] = "es ist hour";
 minutes[01] = "es war gerade hour";

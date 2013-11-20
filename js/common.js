@@ -8,16 +8,19 @@ var hours = new Array();
 
 /* initialize the watch and the recurring call to update it */
 function initWatch() {
-	//$('body').fadeOut(0);
+	$('body').fadeOut(0);
+	customAlign('#mainclock', 'center', 'center');
+	customAlign('#maincalendar', 'center', 'center');
 	$(window).resize(function(){
 		customAlign('#mainclock', 'center', 'center');
+		customAlign('#maincalendar', 'center', 'center');
 	});
-	$('#hide').load('css/black.css');
-	$('#hide').load('css/red.css');
-	$('#hide').load('css/white.css');
+//	$('#hide').load('css/black.css');
+//	$('#hide').load('css/red.css');
+//	$('#hide').load('css/white.css');
   
-  // default watch is DeLarge
-  initDeLarge();
+  // load default watch (TODO: use cookie)
+  initDeSmall();
   
   var style = 'black'; // default
 	if ($.cookie('style') != null) {
@@ -25,14 +28,20 @@ function initWatch() {
 	}
 	fancySwitchStylesheet(style);
 	updateWordClock();
+	updateWordCalendar();
 	updateWatchClock();
 	// update the words every minute, if necessary
-	setInterval("updateWordClock()", 20000); 
+	setInterval("updateWordClock()", 60000); 
+	setInterval("updateWordCalendar()", 60000); 
 	setInterval("updateWatchClock()", 500);
 }
 
 /* Update the word clock using css classes */
 function updateWordClock() {
+	if ($('#mainclock').is(':hidden')) {
+		return;
+	}
+	
 	$('.highlight').removeClass('highlight');
 	$('.highlightthese').removeClass('highlightthese');
 	var currDate = new Date();
@@ -83,6 +92,37 @@ function updateWordClock() {
 	}
 	$('.highlightthese').addClass('highlight'); /* this way everything highlights at once */	
 }
+
+/* Update the word clock using css classes */
+function updateWordCalendar() {
+	if ($('#maincalendar').is(':hidden')) {
+		return;
+	}
+	$('.highlight').removeClass('highlight');
+	$('.highlightthese').removeClass('highlightthese');
+	var currDate = new Date();
+	var month = currDate.getUTCMonth();
+	var day = currDate.getSeconds(); //currDate.getUTCDate();
+	var year = currDate.getUTCFullYear();
+	
+	var to_highlight = new Array();
+	to_highlight.push(day.toString()); // day = classname
+	
+	// find all elements with classes in to_highlight and add "highlight" as class:
+	var i = 0;
+	while (i < to_highlight.length) {
+		$('.'+to_highlight[i]).addClass('highlightthese');
+		i += 1;
+	}
+	$('.highlightthese').addClass('highlight'); /* this way everything highlights at once */	
+	
+	// add advent feature:
+	$('.highlight').click(function() {
+		alert("clicked on " + day);
+	}
+  );
+}
+
 
 /* Update the small clock that shows the current time in numbers */
 function updateWatchClock() {

@@ -3,7 +3,7 @@ $(function () {
   addSwitcherDeSmall();
 });
 
-function addSwitcherDeSmall() {	
+function addSwitcherDeSmall() {
   var switchElement = document.getElementById("switcherLanguage");
   var aTag = document.createElement('a');
   aTag.setAttribute('href', "#");
@@ -16,6 +16,9 @@ function addSwitcherDeSmall() {
 
 /* minutes definitions */
 function initDeSmall() {
+	$("#mainclock").show();	
+	$("#maincalendar").hide();
+	
 	minutes = new Array();
 	minutes[00] = "es ist hour";
 	minutes[05] = "es ist fuenf nach hour";

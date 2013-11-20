@@ -16,6 +16,9 @@ function addSwitcherEnSmall() {
 
 /* minutes definitions */
 function initEnSmall() {
+	$("#mainclock").show();	
+	$("#maincalendar").hide();
+
 	minutes = new Array();
 	minutes[00] = "it is hour";
 	minutes[05] = "it is five past hour";
