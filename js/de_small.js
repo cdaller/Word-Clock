@@ -136,10 +136,10 @@ function addDataToTableDeSmall(tableId) {
 	);
   addRow(tabBody,
 		new Array(
-			createColumn("dreiHour", "D"),
-			createColumn("dreiHour", "R"),
-			createColumn("dreiHour", "E"),
-			createColumn("dreiHour", "I"),
+			createColumn("threeHour", "D"),
+			createColumn("threeHour", "R"),
+			createColumn("threeHour", "E"),
+			createColumn("threeHour", "I"),
 			createColumn("", "P"),
 			createColumn("", "M"),
 			createColumn("", "J"),
