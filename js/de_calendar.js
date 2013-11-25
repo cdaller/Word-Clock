@@ -8,7 +8,7 @@ function addSwitcherDeCalendar() {
   var aTag = document.createElement('a');
   aTag.setAttribute('href', "#");
   aTag.setAttribute('onclick', "initDeCalendar(); return false;");
-  aTag.innerHTML = "Deutsch Advent";
+  aTag.innerHTML = "Advent";
 	var myDiv = document.createElement('div');
   myDiv.appendChild(aTag);
 	switchElement.appendChild(myDiv);
@@ -19,7 +19,26 @@ function initDeCalendar() {
 	$("#mainclock").hide();	
 	$("#maincalendar").show();	
 	addDataToTableDeCalendar('maincalendar');
+	customAlign('#maincalendar', 'center', 'center');
 	updateWordCalendar();
+	
+	// add links to passed days in december
+	var currDate = new Date()
+	var month = currDate.getUTCMonth();
+	// show only in december or if "?all" in url :-)
+	var showAll = (window.location.search.indexOf('all') >= 0);
+	if (month == 11 || showAll) {		
+		var day = currDate.getUTCDate();
+		var daysTillNow = document.getElementById("daysTillNow");
+		daysTillNow.innerHTML = "Vergangene Tage: "; // erase before filling it
+		for (var index = 1; (showAll || index < day) && index <= 24; index++) {
+			var oldDayLink = document.createElement('a');
+			oldDayLink.innerHTML = index + ".";
+			oldDayLink.setAttribute('href', '#');
+			oldDayLink.setAttribute('onclick', 'updateWordCalendar(' + index + '); return false;');
+			daysTillNow.appendChild(oldDayLink);
+		}
+	}
 }
 
 /* add table data for word clock using methods from table.js */

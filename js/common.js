@@ -7,7 +7,7 @@ var minutes = new Array();
 var hours = new Array();
 
 /* initialize the watch and the recurring call to update it */
-function initWatch() {
+function initWatch(defaultInitFunction) {
 	$('body').fadeOut(0);
 	customAlign('#mainclock', 'center', 'center');
 	customAlign('#maincalendar', 'center', 'center');
@@ -20,7 +20,7 @@ function initWatch() {
 //	$('#hide').load('css/white.css');
   
   // load default watch (TODO: use cookie)
-  initDeSmall();
+  defaultInitFunction();
   
   var style = 'black'; // default
 	if ($.cookie('style') != null) {
@@ -79,7 +79,11 @@ function updateWordClock() {
 	if (hours[hour24] != null) {
 		to_highlight.push(hours[hour24]);
 	} else {
-		to_highlight.push('oclock');		
+		if (hours == 1) {
+			to_highlight.push('oclock');
+		} else {
+			to_highlight.push('oclock_s');			
+		}
 	}
 	
 	to_highlight.push(amPm);
@@ -94,15 +98,21 @@ function updateWordClock() {
 }
 
 /* Update the word clock using css classes */
-function updateWordCalendar() {
+function updateWordCalendar(selectedDay) {
 	if ($('#maincalendar').is(':hidden')) {
 		return;
 	}
+	$('.highlight').off(); // remove function
 	$('.highlight').removeClass('highlight');
 	$('.highlightthese').removeClass('highlightthese');
 	var currDate = new Date();
 	var month = currDate.getUTCMonth();
-	var day = currDate.getSeconds(); //currDate.getUTCDate();
+	var day;
+	if (selectedDay == null) {
+	  day = currDate.getUTCDate(); //currDate.getSeconds(); //
+	} else {
+		day = selectedDay;
+	}
 	var year = currDate.getUTCFullYear();
 	
 	var to_highlight = new Array();
@@ -111,14 +121,24 @@ function updateWordCalendar() {
 	// find all elements with classes in to_highlight and add "highlight" as class:
 	var i = 0;
 	while (i < to_highlight.length) {
-		$('.'+to_highlight[i]).addClass('highlightthese');
+		$('.' + to_highlight[i]).addClass('highlightthese');
 		i += 1;
 	}
 	$('.highlightthese').addClass('highlight'); /* this way everything highlights at once */	
 	
-	// add advent feature:
+	// add advent feature (play audio file from advent directory), controles underneath calendar
 	$('.highlight').click(function() {
-		alert("clicked on " + day);
+		var pos = $('#maincalendar').position();
+		var calHeight = $('#maincalendar').outerHeight();
+		var yPos = pos.top + calHeight;
+		$('.audio_player').css({
+			position: "absolute",
+			top: yPos + "px",
+			left: pos.left + "px"
+		});
+		$('.audio_player').show();
+		$('.audio_player_control').get(0).src = 'advent/' + day + '.mp3';
+		$('.audio_player_control').get(0).play();
 	}
   );
 }
@@ -162,16 +182,5 @@ function fancySwitchLanguage(language) {
 	fileref.setAttribute("type","text/javascript")
 	fileref.setAttribute("src", filename)
 	addDataToTable('mainclock'); 
-	updateWordClock();
-	
-	// $.getScript( filename )
-	//   .done(function( script, textStatus ) {
-	//     console.log( textStatus );
-	// 	  // create table
-	// 	  addDataToTable('mainclock'); 
-	// 		updateWordClock();
-	// 	})
-	// 	.fail(function( jqxhr, settings, exception ) {
-	//     console.log( exception );
-	//   });
+	updateWordClock();	
 }

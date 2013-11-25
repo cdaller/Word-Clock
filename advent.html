@@ -4,24 +4,23 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title> Word Clock </title>
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<link id="mainStyle" rel="stylesheet" type="text/css" href="css/black.css" />
 	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link id="mainStyle" rel="stylesheet" type="text/css" href="css/black.css" />
+	<link rel="stylesheet" type="text/css" href="css/advent.css" />
 	<script src = "js/jquery-2.0.3.js" type = "text/javascript"> </script>
 	<script src = "js/centerdiv.js" type = "text/javascript"> </script>
 	<script src = "js/cookie.js" type = "text/javascript"> </script>
 
   <script src = "js/common.js" type = "text/javascript"> </script>
   <script src = "js/table.js" type = "text/javascript"> </script>
+	<script src = "js/de_calendar.js" type = "text/javascript"> </script>
 	<script src = "js/de_small.js" type = "text/javascript"> </script>
-	<script src = "js/de_large.js" type = "text/javascript"> </script>
-  <script src = "js/en_orig.js" type = "text/javascript"> </script>
-	<script src = "js/fr_small.js" type = "text/javascript"> </script>
-	<!--script src = "js/de_calendar.js" type = "text/javascript"> </script-->
+	<script src = "js/en_orig.js" type = "text/javascript"> </script>
 
   <script type="text/javascript">
     // execute as soon as page is loaded:
 		$(function () {
-      initWatch(initDeSmall); // default watch is passed
+      initWatch(initDeCalendar);
 		});
 	</script>
 </head>
@@ -43,10 +42,19 @@
   <table id = "maincalendar"></table>
 </div>
 
+<div class='audio_player'>
+  <audio class='audio_player_control' controls='controls' src='advent/01.mp3' type='audio/mp3'>
+    Audio is not supported!
+  </audio>
+</div>
+
 <a href = "#" id = "watchToggle">
 <div id = "watch"> </div>
 </a>
 <div id = "hide"></div>
+
+<div id = "daysTillNow" />
+
 <!--
 Word clock code was inspired by Achal Dave
 centerdiv.js contains code found on http://tutorialzine.com/2010/03/centering-div-vertically-and-horizontally/

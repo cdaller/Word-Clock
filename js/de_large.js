@@ -85,6 +85,7 @@ minutes[59] = "es ist gleich hourPlusOne";
 hours = new Array();
 
 addDataToTableDeLarge('mainclock');
+customAlign('#mainclock', 'center', 'center');
 updateWordClock();
 }
 
@@ -259,9 +260,9 @@ function addDataToTableDeLarge(tableId) {
 			createColumn("tenHour", "H"),
 			createColumn("tenHour", "N"),
 			createColumn("", "F"),
-			createColumn("oclock", "U"),
-			createColumn("oclock", "H"),
-			createColumn("oclock", "R"),
+			createColumn("oclock oclock_s", "U"),
+			createColumn("oclock oclock_s", "H"),
+			createColumn("oclock oclock_s", "R"),
 			createColumn("", "Ä"),
 			createColumn("am", "V"),
 			createColumn("am", "O"),

@@ -108,9 +108,9 @@ function addDataToTableFrSmall(tableId) {
 		new Array(
       createColumn("midi", "M"),
       createColumn("midi", "I"),
-      createColumn("midi", "D"),
-      createColumn("midi", "I"),
-      createColumn("", "X"),
+      createColumn("midi tenHour", "D"),
+      createColumn("midi tenHour", "I"),
+      createColumn("tenHour", "X"),
       createColumn("minuit", "M"),
       createColumn("minuit", "I"),
       createColumn("minuit", "N"),
@@ -126,12 +126,12 @@ function addDataToTableFrSmall(tableId) {
       createColumn("elevenHour", "Z"),
       createColumn("elevenHour", "E"),
       createColumn("", "R"),
-      createColumn("oclock", "H"),
-      createColumn("oclock", "E"),
-      createColumn("oclock", "U"),
-      createColumn("oclock", "R"),
-      createColumn("oclock", "E"),
-      createColumn("oclock", "S")
+      createColumn("oclock oclock_s", "H"),
+      createColumn("oclock oclock_s", "E"),
+      createColumn("oclock oclock_s", "U"),
+      createColumn("oclock oclock_s", "R"),
+      createColumn("oclock oclock_s", "E"),
+      createColumn("oclock_s", "S")
 		)
 	);
   addRow(tabBody,

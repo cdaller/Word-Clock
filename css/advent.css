@@ -1,0 +1,26 @@
+#watch {
+	position:absolute;
+	bottom:0pt;
+	left:0pt;
+	font-size:20px;
+	display: none;
+}
+
+#daysTillNow {
+	position:absolute;
+	bottom:0pt;
+	left:0pt;
+	font-size:20px;
+}
+
+#daysTillNow a {
+	text-decoration:none;
+	padding-left: 3px;
+}
+
+.audio_player {
+	position:absolute;
+	bottom: 100pt;
+	left:0pt;
+	display:none;
+}

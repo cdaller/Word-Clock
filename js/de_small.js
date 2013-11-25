@@ -37,6 +37,7 @@ function initDeSmall() {
 	hours = new Array();
   
 	addDataToTableDeSmall('mainclock');
+	customAlign('#mainclock', 'center', 'center');
 	updateWordClock();
 }
 

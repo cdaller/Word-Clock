@@ -36,6 +36,7 @@ function initEnSmall() {
 	hours = new Array();
 
   addDataToTableEnSmall('mainclock');
+	customAlign('#mainclock', 'center', 'center');
   updateWordClock();
 }
 
@@ -184,12 +185,12 @@ function addDataToTableEnSmall(tableId) {
       createColumn("tenHour", "N"),
       createColumn("", "S"),
       createColumn("", "E"),
-      createColumn("oclock", "O'"),
-      createColumn("oclock", "C"),
-      createColumn("oclock", "L"),
-      createColumn("oclock", "O"),
-      createColumn("oclock", "C"),
-      createColumn("oclock", "K")
+      createColumn("oclock oclock_s", "O'"),
+      createColumn("oclock oclock_s", "C"),
+      createColumn("oclock oclock_s", "L"),
+      createColumn("oclock oclock_s", "O"),
+      createColumn("oclock oclock_s", "C"),
+      createColumn("oclock oclock_s", "K")
 		)
 	);
 }
