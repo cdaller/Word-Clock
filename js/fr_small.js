@@ -21,17 +21,17 @@ function initFrSmall() {
 
 	minutes = new Array();
 	minutes[00] = "il est hour";
-	minutes[05] = "il est hour oclock et1 cinqu";
+	minutes[05] = "il est hour oclock et1 cinq";
 	minutes[10] = "il est hour oclock dix";
 	minutes[15] = "il est hour oclock et1 quart";
 	minutes[20] = "il est hour oclock vingt";
-	minutes[25] = "il est hour oclock vingtcinqu";
+	minutes[25] = "il est hour oclock vingtcinq";
 	minutes[30] = "il est hour oclock et2 demi";
-	minutes[35] = "il est hourPlusOne oclock moins vingtcinqu";
+	minutes[35] = "il est hourPlusOne oclock moins vingtcinq";
 	minutes[40] = "il est hourPlusOne oclock moins vingt";
 	minutes[45] = "il est hourPlusOne oclock moins le quart";
 	minutes[50] = "il est hourPlusOne oclock moins dix";
-	minutes[55] = "il est hourPlusOne oclock moins cinqu";
+	minutes[55] = "il est hourPlusOne oclock moins cinq";
 	
 	hours = new Array();
 	hours[00] = "minuit";
@@ -166,17 +166,17 @@ function addDataToTableFrSmall(tableId) {
 	);
   addRow(tabBody,
 		new Array(
-      createColumn("vingt vingtcinqu", "V"),
-      createColumn("vingt vingtcinqu", "I"),
-      createColumn("vingt vingtcinqu", "N"),
-      createColumn("vingt vingtcinqu", "G"),
-      createColumn("vingt vingtcinqu", "T"),
-      createColumn("vingtcinqu", "-"),
-      createColumn("cinqu vingtcinqu", "C"),
-      createColumn("cinqu vingtcinqu", "I"),
-      createColumn("cinqu vingtcinqu", "N"),
-      createColumn("cinqu vingtcinqu", "Q"),
-      createColumn("cinqu vingtcinqu", "U")
+      createColumn("vingt vingtcinq", "V"),
+      createColumn("vingt vingtcinq", "I"),
+      createColumn("vingt vingtcinq", "N"),
+      createColumn("vingt vingtcinq", "G"),
+      createColumn("vingt vingtcinq", "T"),
+      createColumn("vingtcinq", "-"),
+      createColumn("cinq vingtcinq", "C"),
+      createColumn("cinq vingtcinq", "I"),
+      createColumn("cinq vingtcinq", "N"),
+      createColumn("cinq vingtcinq", "Q"),
+      createColumn("cinq vingtcinq", "U")
 		)
 	);
   addRow(tabBody,
