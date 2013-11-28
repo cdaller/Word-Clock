@@ -188,7 +188,7 @@ function addDataToTableFrSmall(tableId) {
       createColumn("demi", "E"),
       createColumn("demi", "M"),
       createColumn("demi", "I"),
-      createColumn("demi", "E"),
+      createColumn("", "E"),
       createColumn("", "P"),
       createColumn("", "A"),
       createColumn("", "M")
