@@ -79,7 +79,7 @@ function updateWordClock() {
 	if (hours[hour24] != null) {
 		to_highlight.push(hours[hour24]);
 	} else {
-		if (hours == 1) {
+		if (hour == 1) {
 			to_highlight.push('oclock');
 		} else {
 			to_highlight.push('oclock_s');			
