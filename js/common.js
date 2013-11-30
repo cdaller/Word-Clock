@@ -77,6 +77,7 @@ function updateWordClock() {
 	var to_highlight = classes.split(" ");
 	
 	if (hours[hour24] != null) {
+		// FIXXME: "minuit moins dix" does not work, as midnight is just set at 24, not at 23 oclock
 		to_highlight.push(hours[hour24]);
 	} else {
 		if (hour == 1) {
