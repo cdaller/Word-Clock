@@ -176,7 +176,7 @@ function addDataToTableFrSmall(tableId) {
       createColumn("cinq vingtcinq", "I"),
       createColumn("cinq vingtcinq", "N"),
       createColumn("cinq vingtcinq", "Q"),
-      createColumn("cinq vingtcinq", "U")
+      createColumn("", "U")
 		)
 	);
   addRow(tabBody,
