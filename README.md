@@ -1,11 +1,9 @@
 # Word Clock
 
-This is a clock made of letters that I wanted to make a while back. It's from
-when my only experience with JS was piecing together jQuery plugins in hopes of
-something neat, when Vim just meant
-[soap](http://en.wikipedia.org/wiki/Vim_%28cleaning_product%29) for me. 
+I wanted to have such a clock (in hardware), but for the beginning a software version must do :-)
+Thanks to [Achal Dave]{https://github.com/achalddave/Word-Clock} I did not have to do the whole work, just heavily tweaked his code (multiple languages, new colors, etc.).
 
-Anyway, it looks sort of cool even though the code doesn't.
+Thanks to github, you can also see a [live demo]{https://rawgithub.com/cdaller/Word-Clock/master/index.html}!
 
 Screenshot: ![Word Clock Screenshot](http://i.imgur.com/HszqD.png "Word Clock
 Screenshot")
